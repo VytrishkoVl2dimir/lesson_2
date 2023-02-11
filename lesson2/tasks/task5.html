@@ -22,8 +22,8 @@
 		let timeSeconds = parseInt(prompt('Введіть кількість секунд', '0'))
 
 		// 2. Знаходимо результат
-		let timeHours = (timeSeconds / 3600).toFixed(2)
-		let timeMinutes = (timeSeconds / 60).toFixed(2)
+		let timeHours = Math.round(timeSeconds / 3600)
+		let timeMinutes = Math.round((timeSeconds % 3600) / 60)
 
 		// 3. Виводимо результат
 		document.write(`
