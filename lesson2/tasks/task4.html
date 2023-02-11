@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home Work</title>
+</head>
+
+<body>
+	<h1>Задача 4</h1>
+	<!-- Умова задачі -->
+	<p>
+		Дано довжину у сантиметрах. Визначати скільки це метрів і кілометрів.
+	</p>
+
+	<!-- Розвязок -->
+	<script>
+		// 1. Вводимо необхідні дані
+		let length_Cm = parseFloat(prompt('Введіть довжину в см.', '0'))
+
+		// 2. Знаходимо результат
+		let length_M = (length_Cm / 100).toFixed(2)
+		let length_Км = (length_Cm / 100000).toFixed(2)
+
+		// 3. Виводимо результат
+		document.write(`
+				<table border="2px">
+					<tr>
+						<th>Довжина, см</th>
+						<th>${length_Cm}</th>
+					</tr>
+					<tr>
+						<th>Довжина, м</th>
+						<th>${length_M}</th>
+					</tr>
+					<tr>
+						<th>Довжина, км</th>
+						<th>${length_Км}</th>
+					</tr>			
+				</table>
+				`)
+	</script>
+</body>
+
+</html>

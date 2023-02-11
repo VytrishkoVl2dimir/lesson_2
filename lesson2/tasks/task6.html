@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home Work</title>
+</head>
+
+<body>
+	<h1>Задача 6</h1>
+
+	<!-- Умова задачі -->
+	<h2>Умова задачі:</h2>
+	<p>
+		З клавіатури вводяться вартість товару та кількість одиниць 3 товарів. Обчислити вартість кожного товару
+		окремо та загальну вартість. Вивести чек (як у супермаркеті) використовуючи елементи розмітки.
+	</p>
+
+	<!-- Розвязок -->
+
+	<div class="checkcontainer">
+		<div class="date"></div>
+		<ul class="checklist">
+			<li class="item1">
+			</li>
+			<li class="item2">
+			</li>
+			<li class="item3">
+			</li>
+		</ul>
+		<div class="totalcost"></div>
+	</div>
+
+	<script>
+		// 1. Вводимо необхідні дані
+		let сostProduct_1 = parseFloat(prompt('Введіть вартість товару №1', '10'))
+		let quantityProduct_1 = parseInt(prompt('Введіть кількість товару №1', '10'))
+		let сostProduct_2 = parseFloat(prompt('Введіть вартість товару №2', '10'))
+		let quantityProduct_2 = parseInt(prompt('Введіть кількість товару №2', '10'))
+		let сostProduct_3 = parseFloat(prompt('Введіть вартість товару №3', '10'))
+		let quantityProduct_3 = parseInt(prompt('Введіть кількість товару №3', '10'))
+
+		// 2. Знаходимо результат
+		let date = new Date()
+		let totalCostProduct_1 = parseFloat((сostProduct_1 * quantityProduct_1).toFixed(2))
+		let totalCostProduct_2 = parseFloat((сostProduct_2 * quantityProduct_2).toFixed(2))
+		let totalCostProduct_3 = parseFloat((сostProduct_3 * quantityProduct_3).toFixed(2))
+
+		let totalCostProducts = (totalCostProduct_1 + totalCostProduct_2 + totalCostProduct_3).toFixed(2)
+
+		// 3. Виводимо результат
+
+		let getdate = document.querySelector(".date")
+		let item_1 = document.querySelector(".item1")
+		let item_2 = document.querySelector(".item2")
+		let item_3 = document.querySelector(".item3")
+		let all_sum = document.querySelector(".totalcost")
+
+		getdate.innerHTML = (date.toLocaleString('ua-UA'))
+		item_1.innerHTML = (`<h3>Товар №1:</h3> <br> ${quantityProduct_1} * ${сostProduct_1} = ${totalCostProduct_1} грн.`)
+		item_2.innerHTML = (`<h3>Товар №2:</h3> <br> ${quantityProduct_2} * ${сostProduct_2} = ${totalCostProduct_2} грн.`)
+		item_3.innerHTML = (`<h3>Товар №3:</h3> <br> ${quantityProduct_3} * ${сostProduct_3} = ${totalCostProduct_3} грн.`)
+		all_sum.innerHTML = (`СУМА: ${totalCostProducts} грн.`)
+	</script>
+</body>
+<style>
+	@import url("https://fonts.googleapis.com/css?family=Montserrat:regular,600,700&display=swap");
+
+	html,
+	body {
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
+
+	body {
+		font-family: Montserrat;
+	}
+
+	ul li {
+		list-style: none;
+	}
+
+	h1 {
+		color: #380794;
+		font-size: 28px;
+	}
+
+	h2 {
+		color: #044204;
+		font-size: 18px;
+		margin: 0;
+	}
+
+	h3 {
+		color: #000;
+		font-size: 16px;
+		font-weight: 600;
+		margin-bottom: 0;
+
+
+	}
+
+	.checkcontainer {
+		padding: 20px 0px;
+		margin-left: 20px;
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+		max-width: 250px;
+	}
+
+	.checklist {
+		padding-left: 15px;
+	}
+
+	.totalcost {
+		margin-left: 15px;
+		font-weight: 700;
+	}
+
+	.date {
+		padding-left: 15px;
+	}
+</style>
+
+</html>
